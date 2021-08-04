@@ -1,0 +1,207 @@
+.buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+}
+
+.select,
+.log_in {
+  display: inline-block;
+  background-color: gold;
+  color: inherit;
+  text-shadow: -2px 2px 4px red, -2px -2px 4px red, 2px -2px 4px red, 2px 2px 4px red;
+  font-size: 20px;
+  padding: 2px 10px;
+  margin-right: 5px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  outline: none;
+  transition: all .4s;
+}
+
+.select__option {
+  color: inherit;
+  background-color: red;
+}
+
+.log_in:hover {
+  background-color: transparent;
+  border: 1px solid gold;
+}
+
+.log_in:active {
+  background-color: green;
+  transform: scale(.7);
+}
+
+.btn_fon {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: url(../../imgs/moon.png), rgba(0, 0, 255, .2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all .4s;
+}
+
+.btn_fon-active {
+  background: url(../../imgs/sun.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all .4s;
+}
+
+.form {
+  max-width: 500px;
+  width: 100%;
+  color: inherit;
+  padding: 40px 20px;
+  display: inline-block;
+  box-shadow: -4px 4px 10px gold, -4px -4px 10px gold, 4px -4px 10px gold, 4px 4px 10px gold;
+  backdrop-filter: blur(4px);
+
+  transform: translate(500px, -300px) scale(0);
+  opacity: 0;
+  transition: all .3s;
+}
+
+
+
+.form-active {
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
+  transition: all .3s;
+}
+
+.form__titel {
+  text-align: center;
+  text-shadow: -2px 2px 4px red, -2px -2px 4px red, 2px -2px 4px red, 2px 2px 4px red;
+  font-style: italic;
+}
+
+.label {
+  width: 100%;
+  display: block;
+  padding-top: 5px;
+  margin-bottom: 20px;
+  position: relative;
+  border-bottom: 2px solid gold;
+
+}
+
+.input {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  letter-spacing: 2px;
+  word-spacing: 7px;
+  font-weight: bold;
+  text-shadow: -2px 2px 4px red, -2px -2px 4px red, 2px -2px 4px red, 2px 2px 4px red;
+  color: rgb(15, 241, 230);
+}
+
+.input:focus {
+  background-color: rgba(15, 241, 230, .4);
+}
+
+.input:focus+.span {
+  bottom: 90%;
+  transform: scale(.7);
+}
+
+.span {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  font-weight: 500;
+  text-shadow: -2px 2px 4px red, -2px -2px 4px red, 2px -2px 4px red, 2px 2px 4px red;
+
+  transition: all .4s;
+
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  z-index: -1;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.check {
+  display: none;
+}
+
+.check:checked+.check-span::after {
+  display: block;
+}
+
+.check-span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: hsl(0, 12%, 63%);
+  margin-right: 5px;
+  border: 1px solid gold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-span::after {
+  display: none;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: gold;
+}
+
+.check__text {
+  text-shadow: -2px 2px 4px red, -2px -2px 4px red, 2px -2px 4px red, 2px 2px 4px red;
+  font-size: 17px;
+  letter-spacing: 4px;
+}
+
+.btn {
+  display: inline-block;
+  width: 50%;
+  background-color: gold;
+  color: inherit;
+  text-shadow: -2px 2px 4px red, -2px -2px 4px red, 2px -2px 4px red, 2px 2px 4px red;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: translateX(50%);
+}
+
+.btn:active {
+  background-color: green;
+  transform: translateX(50%) scale(.5);
+  transition: transform .4s;
+}
