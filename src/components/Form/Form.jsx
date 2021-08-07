@@ -1,7 +1,10 @@
 import { useRef, useState } from "react";
 import "./Form.css";
+// import { ThemeContext } from "../../context/Context";
 
 function Form() {
+  // const { theme } = useContext(ThemeContext);
+
   const siteContext = {
     uz: {
       btn_login: "Kirish",
@@ -20,7 +23,7 @@ function Form() {
     },
     en: {
       btn_login: "Log in",
-      form_titel: "We will always keep your information confidential !",
+      form_titel: "We will always keep confidential your information !",
       first_name: "First Name:",
       first_name_placeholder: "Your First Name",
       last_name: "Last Name:",
@@ -48,7 +51,7 @@ function Form() {
     },
   };
 
-  const [lang, setLang] = useState("uz");
+  const [lang, setLang] = useState(window.localStorage.getItem("lang") || "uz");
   const span1 = useRef(null);
   const span2 = useRef(null);
   const span3 = useRef(null);
@@ -61,9 +64,12 @@ function Form() {
     <div className="root" ref={body}>
       <div className="buttons">
         <select
-          className="select"
+          className={`select `}
           defaultValue={lang}
-          onChange={(event) => setLang(event.target.value)}
+          onChange={(event) => {
+            setLang(event.target.value);
+            window.localStorage.setItem("lang", event.target.value);
+          }}
         >
           <option className="select__option" value="uz">
             Uzbek
@@ -77,7 +83,7 @@ function Form() {
         </select>
 
         <button
-          className="log_in"
+          className={`log_in`}
           onClick={() => {
             form.current.classList.toggle("form-active");
           }}
@@ -91,6 +97,14 @@ function Form() {
           onClick={() => {
             darkLight.current.classList.toggle("btn_fon-active");
             body.current.classList.toggle("root-active");
+            form.current.classList.toggle("dark-box");
+            document.querySelector(".log_in").classList.toggle("dark");
+            document.querySelector(".select").classList.toggle("dark");
+            document.querySelector(".btn").classList.toggle("dark");
+            document.querySelector(".check-span").classList.toggle("dark");
+            document.querySelectorAll(".label").forEach((label) => {
+              label.classList.toggle("dark-label");
+            });
           }}
         ></button>
       </div>
@@ -111,7 +125,6 @@ function Form() {
                 span1.current.style.bottom = "5px";
               }
             }}
-            // placeholder={siteContext[lang].first_name_placeholder}
             required
             autoComplete="off"
           />
@@ -133,7 +146,6 @@ function Form() {
                 span2.current.style.bottom = "5px";
               }
             }}
-            // placeholder={siteContext[lang].last_name_placeholder}
             required
             autoComplete="off"
           />
@@ -155,7 +167,6 @@ function Form() {
                 span3.current.style.bottom = "5px";
               }
             }}
-            // placeholder={siteContext[lang].email_placeholder}
             required
             autoComplete="off"
           />
@@ -177,7 +188,6 @@ function Form() {
                 span4.current.style.bottom = "5px";
               }
             }}
-            // placeholder={siteContext[lang].password_placeholder}
             required
             autoComplete="off"
           />

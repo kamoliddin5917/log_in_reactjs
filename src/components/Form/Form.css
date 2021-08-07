@@ -95,7 +95,7 @@
   margin-bottom: 20px;
   position: relative;
   border-bottom: 2px solid gold;
-
+  transition: all .4s;
 }
 
 .input {
@@ -130,7 +130,7 @@
   font-weight: 500;
   text-shadow: -2px 2px 4px red, -2px -2px 4px red, 2px -2px 4px red, 2px 2px 4px red;
 
-  transition: all .4s;
+  transition: all .2s;
 
   position: absolute;
   bottom: 5px;
@@ -204,4 +204,19 @@
   background-color: green;
   transform: translateX(50%) scale(.5);
   transition: transform .4s;
+}
+
+.dark {
+  background: black;
+  transition: all .4s;
+}
+
+.dark-box {
+  box-shadow: -4px 4px 10px black, -4px -4px 10px black, 4px -4px 10px black, 4px 4px 10px black;
+  transition: all .4s;
+}
+
+.dark-label {
+  border-bottom: 2px solid black;
+  transition: all .4s;
 }
